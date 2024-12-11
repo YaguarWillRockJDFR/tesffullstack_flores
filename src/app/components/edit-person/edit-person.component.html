@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2>{{ personId ? 'Editar Persona' : 'Registrar Persona Nueva' }}</h2>
+    <form [formGroup]="personForm" (ngSubmit)="savePerson()">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input id="nombre" type="text" class="form-control" formControlName="nombre" />
+        </div>
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input id="apellido" type="text" class="form-control" formControlName="apellido" />
+        </div>
+        <div class="mb-3">
+            <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+            <input id="fechaNacimiento" type="date" class="form-control" formControlName="fechaNacimiento" />
+        </div>
+        <div class="mb-3">
+            <label for="puesto" class="form-label">Puesto</label>
+            <input id="puesto" type="text" class="form-control" formControlName="puesto" />
+        </div>
+        <div class="mb-3">
+            <label for="sueldo" class="form-label">Sueldo</label>
+            <input id="sueldo" type="number" class="form-control" formControlName="sueldo" />
+        </div>
+        <button type="submit" class="btn btn-primary">{{ personId ? 'Actualizar' : 'Guardar' }}</button>
+        <button type="button" class="btn btn-secondary ms-2" (click)="cancel()">Cancelar</button>
+    </form>
+</div>

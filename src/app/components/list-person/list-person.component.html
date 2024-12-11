@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Puesto</th>
+                    <th>Sueldo</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let person of persons; trackBy: trackByPersonId">
+                    <td>{{ person.id }}</td>
+                    <td>{{ person.nombre }}</td>
+                    <td>{{ person.apellido }}</td>
+                    <td>{{ person.fechaNacimiento }}</td>
+                    <td>{{ person.puesto }}</td>
+                    <td>{{ person.sueldo || 0 | currency }}</td>
+                    <td>
+                        <button class="btn btn-warning" (click)="editPerson(person.id)">Editar</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deletePerson(person.id)">Eliminar</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
